@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+8
+  http:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+#  resources:
+#    static-locations: /templates
+server:
+  tomcat.uri-encoding: UTF-8
+
+#mybatisPlus配置
+mybatis-plus:
+#  mapper-locations: classpath:mapper/*.xml
+  type-aliases-page: com.talkweb.edu.entity
+  type-aliases-super-type: java.lang.Object
+  configuration:
+    cache-enabled: false

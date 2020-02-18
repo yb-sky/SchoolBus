@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	</head>
+	<style>
+		li{
+			list-style: none;
+		}
+		html{
+			background:rgba(249,249,249,1);
+		}
+		.top{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #FFFFFF;
+			padding: 0 9vw;
+		}
+		.toplogo{
+			width: 169px;
+			height:38px;
+			background-image: url('img/logo.png');
+			background-size: 100% 100%;
+		}
+		.userinfo{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.faceimg{
+			width: 36px;
+			height: 36px;
+			background-image: url('img/u134.png');
+			background-size: 100% 100%;
+		}
+		.container{
+			background:rgba(249,249,249,1);
+			height: 91.7vh;
+		}
+		.position{
+			font-size:13px;
+			font-family:PingFang SC;
+			font-weight:500;
+			display: flex;
+			margin: 0 9vw;
+		}
+		.position-now{
+			color: rgba(20, 130, 233, 1);
+		}
+		.selector{
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+		}
+		.s1{
+			display: flex;
+		}
+		.content{
+			position: relative;
+			width:80vw;
+			padding: 30px 15px;
+			margin: 0 auto;
+			background:rgba(255,255,255,1);
+		}
+		.upload{
+			background-color: rgba(20, 130, 233, 1);
+			width:92px;
+			height: 32px;
+			line-height: 32px;
+			color: #fff;
+			border-radius:5px;
+			display:-webkit-flex;
+			justify-content: center;
+			align-items: center;
+			position:absolute;
+			right: 15px;
+			margin-top:30px;
+		}
+		.search{
+			width: 62px;
+			height: 32px;
+			line-height: 32px;
+			background-color: rgba(101, 176, 246, 1);
+			color: #fff;
+			font-size:14px;
+			font-family:PingFangSC;
+			font-weight:500;;
+			border:1px solid rgba(101,176,246,1);
+			text-align: center;
+			vertical-align: middle;
+			border-radius:3px;
+		}
+		.selectors{
+			margin-right: 19px;
+			line-height: 32px;
+			font-size:14px;
+			font-family:PingFang SC;
+			font-weight:500;
+			color:rgba(153,153,153,1);
+		}
+		.head{
+			width: 100%;
+			background:rgba(242,249,255,1);
+			color: rgba(153, 153, 153, 1);
+			font-size:14px;
+			font-family:PingFang SC;
+			font-weight:500;
+		}
+		select{
+			height: 32px;
+			margin-right: 12px;
+		}
+		input{
+			height: 26px;
+			margin-right: 10px;
+		}
+		a{
+			text-decoration: none;
+				color: rgba(85,85,85,1)!important;
+		}
+		.pagination{
+			display: flex;
+			justify-content: center;
+    		list-style-type: none;
+    		margin-block-start: 0;
+    		margin-block-end: 0;
+    		margin-inline-start: 0px;
+    		margin-inline-end: 0px;
+    		padding-inline-start: 0;
+		}
+		.listcontent{
+				display: grid;
+				grid-template-columns: 14% 23% 11% 40% 12%;
+  				grid-template-rows:  repeat(10, 36px);
+  				margin-top:77px;
+  				justify-items: start;
+  				align-items: flex-start;
+  				line-height: 36px;
+  				font-size:14px;
+				font-family:PingFang SC;
+				font-weight:500;
+				color:rgba(85,85,85,1);
+		}
+		.page-link{
+			display: inline-block;
+			list-style: none;
+			width: 28px;
+			text-align: center;
+		}
+		.previous{
+			background-color: rgba(211, 220, 230, 1);
+		}
+		.next{
+			background-color: rgba(211, 220, 230, 1);
+		}
+		.pagination{
+			color: rgba(85,85,85,1)!importang;
+		}
+		.cz{
+			color: rgba(20, 130, 233, 1);
+			font-size:14px;
+			font-family:PingFang SC;
+			font-weight:500;
+		}
+		.mb{
+			position: absolute;
+			top: 0;
+			width: 100vw;
+			height: 100vh;
+			background-color: rgba(0,0,0,0.83);
+			z-index: 100;
+			display: none;
+		}
+		.messagebox{
+			position: absolute;
+			top: 130px;
+			margin: 0 29vw;
+			width: 800px;
+			height: 600px;
+			background-color: #FFFFFF;
+			z-index: 200;
+		}
+		.mboxhead{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		table{
+			 border-collapse:   separate;
+			    border-spacing:   10px;
+			    margin-top: 30px;
+		}
+		.name{
+			font-size:14px;
+			font-family:PingFang SC;
+			font-weight:500;
+			color:rgba(153,153,153,1);
+		}	
+		.boxtitle{
+			font-size:18px;
+			font-family:PingFang SC;
+			font-weight:500;
+			color:rgba(51,51,51,1);
+		}
+			.btn-bottom{
+			display: flex;
+			position: absolute;
+			justify-content: center;
+			width: 100%;
+			bottom: 20px;
+		}
+		.btn{
+			width:86px;
+			height:36px;
+			line-height: 36px;
+			border:1px solid;
+			border-radius:3px;
+			text-align: center;
+			margin-right: 20px;
+		}
+		.submit{	
+			background:rgba(20,130,233,1);
+			border:1px solid rgba(20,130,233,1);
+			border-radius:3px;
+			color: #FFFFFF;
+		}
+			.editor{
+			display: none;
+		}
+		textarea{
+			height: 130px;
+			width: 385px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>
+		 $(document).ready(function(){
+	 	$(".edit").click(function(){
+	 		$(".mb").show();
+	 		$(".editor").show();
+	 	});
+	 	$(".title").click(function(){
+	 		$(".mb").show();
+	 		$(".creat").show();
+	 	});
+	 	$(".show").click(function(){
+	 		$(".mb").show();
+	 		$(".view").show();
+	 	});
+	 	$('.close').click(function(){
+	 		$(".mb").hide();
+	 		$(".view").hide();
+	 		$(".creat").hide();
+	 		$(".editor").hide();
+	 	});
+	 });
+	</script>
+	<body>
+	<div>
+        <div class="top">
+            <div class="toplogo"></div>
+            <div class="userinfo">
+                <div class="faceimg"></div>
+                <span class="name">肖战老师</span>
+            </div>
+        </div>
+        <div class="container">
+         <div class="position">
+             <span>当前位置：首页</span> 
+             <span class="position-now">>名单管理</span>
+         </div>
+         <div class="content">
+             <div class="selector">
+                 <div class="s1">
+                     <span class="selectors">年级</span>
+                     <div>
+                         <select>
+                         	<option>一年级</option>
+                         	<option>一年级</option>
+                         	<option>一年级</option>
+                         </select>
+                     </div>
+                 </div>
+                 <div class="s1">
+                     <span class="selectors">班级</span>
+                     <div>
+                         <select>
+                         	<option>一班</option>
+                         	<option>一班</option>
+                         	<option>一班</option>
+                         </select>
+                     </div>
+                 </div>
+                <input placeholder="请输入姓名搜索"/>
+                <div class="search">查询</div>
+             </div>
+             <div class="upload" style="">
+             	<img src="img/file.png"/>
+             	<span>导出</span>
+             </div>
+             <div class="listcontent">
+             	<td>
+             		<span class="head">年级</span>
+             		<span class="head">班级</span>
+             		<span class="head">姓名</span>
+             		<span class="head">乘坐地点</span>
+             		<span class="head">操作</span>
+             	</td>
+             	<td>
+             		<span>初一年级</span>
+             		<span>1902班</span>
+             		<span>易烊千玺</span>
+             		<span>绵阳市涪城区御中路14-70号</span>
+             		<div class="cz">
+             		<span class="edit">编辑</span>
+             		<span>删除</span>
+             		</div>
+             	</td>
+             	<td>
+             		<span>初一年级</span>
+             		<span>1902班</span>
+             		<span>易烊千玺</span>
+             		<span>绵阳市涪城区御中路14-70号</span>
+             		<div class="cz">
+             		<span class="edit">编辑</span>
+             		<span>删除</span>
+             		</div>
+             	</td>
+             	<td>
+             		<span>初一年级</span>
+             		<span>1902班</span>
+             		<span>易烊千玺</span>
+             		<span>绵阳市涪城区御中路14-70号</span>
+             		<div class="cz"
+             		<span class="edit">编辑</span>
+             		<span>删除</span>
+             		</div>
+             	</td>
+             	<td>
+             		<span>初一年级</span>
+             		<span>1902班</span>
+             		<span>易烊千玺</span>
+             		<span>绵阳市涪城区御中路14-70号</span>
+             		<div class="cz">
+             		<span class="edit">编辑</span>
+             		<span>删除</span>
+             		</div>
+             	</td>
+             	<td>
+             		<span>初一年级</span>
+             		<span>1902班</span>
+             		<span>易烊千玺</span>
+             		<span>绵阳市涪城区御中路14-70号</span>
+             		<div class="cz">
+             		<span class="edit">编辑</span>
+             		<span>删除</span>
+             		</div>
+             	</td>
+             </div>
+             <ul class="pagination">
+             		<li class="page-item"><a class="" href="#"><span>共3页</span></a></li>
+  					<li class="page-item"><a class="page-link  previous" href="#"><i class="fa fa-angle-left"></i></a></li>
+  					<li class="page-item"><a class="page-link" href="#">1</a></li>
+  					<li class="page-item"><a class="page-link" href="#">2</a></li>
+  					<li class="page-item"><a class="page-link" href="#">3</a></li>
+  					<li class="page-item"><a class="page-link next" href="#"><i class="fa fa-angle-right"></i></a></li>
+			</ul>
+         </div>
+        </div>
+         <div class="mb"></div>
+         <div class="messagebox editor">
+    			<div class="mboxhead">
+    				<span class="boxtitle">编辑</span>
+    				<div class="close"><i class="fa fa-close"></i></div>
+    			</div>
+    			<table>
+    				<tr>
+    					<td>
+    						<div>
+    							<span class="name">年级</span>
+    						</div>
+    					</td>
+    					<td><span>初一年级</span></td>
+    				</tr>
+    				<tr>
+    					<td>
+    						<div>
+    							<span  class="name">班级</span>
+    						</div>
+    					</td>
+    					<td><span>1902班</span></td>
+    				</tr>
+    				<tr>
+    					<td>
+    						<div>
+    							<span  class="name">学生</span>
+    						</div>
+    					</td>
+    					<td><span>易烊千玺</span></td>
+    				</tr>
+    				<tr>
+    					<td>
+    						<div>
+    							<span  class="name">乘坐地点</span>
+    						</div>
+    					</td>
+    					<td>
+    					<textarea>绵阳市涪城区常家巷12号绵阳市中心医院正大门市中心 医院正大门</textarea></td>
+    				</tr>
+
+    			</table>
+    			<div class="btn-bottom">
+    			<div class="btn submit">保存</div>
+    			<div class="btn cancel">取消</div>
+    		</div>
+    		</div>
+    </div>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.talkweb.edu.repository.CarStatisticalMapper">
+
+    <select id="selectByParams" resultMap="BaseResultMap">
+        SELECT id, path, original_name, homework_id, `type`, fileId, fileType, fileTime
+        FROM  ${db_workNotice}.t_homework_attachment
+        WHERE homework_id = #{homeworkId, jdbcType=VARCHAR}
+    </select>
+
+    <delete id="deleteById" parameterType="java.lang.String" >
+        DELETE FROM ${db_workNotice}.`t_homework_reply_attachment`
+        <where>
+            <if test="id !=null and id!=''">
+                and id = #{id}
+            </if>
+        </where>
+    </delete>
+
+</mapper>
